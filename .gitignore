@@ -1,0 +1,48 @@
+# Ignore build outputs
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code settings
+.vscode/
+.vs/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# OS generated files
+.DS_Store
+*.swp
+
+# NuGet packages
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# SQLite database files
+*.db
+
+# Logs
+*.log
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Backup & temporary files
+*.bak
+*.tmp
+*.temp
+
+# Publish Web Output
+*.Publish.xml
+
+# Rider
+.idea/
+*.sln.iml
