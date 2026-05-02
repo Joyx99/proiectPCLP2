@@ -118,6 +118,24 @@
     <Compile Include="dashboard.Designer.cs">
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCautare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCautare.Designer.cs">
+      <DependentUpon>FormCautare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfil.Designer.cs">
+      <DependentUpon>FormProfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formchat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formchat.Designer.cs">
+      <DependentUpon>Formchat.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSignUp.cs">
       <SubType>Form</SubType>
     </Compile>

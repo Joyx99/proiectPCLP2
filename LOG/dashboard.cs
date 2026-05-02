@@ -9,7 +9,6 @@ namespace LOG
     {
         private string username;
 
-        // Lista jocuri
         private List<(string Nume, string Gen, string Culoare)> jocuri = new List<(string, string, string)>
         {
             ("CS2", "FPS / Shooter", "#E84057"),
@@ -20,7 +19,7 @@ namespace LOG
             ("Fortnite", "Battle Royale", "#9B59B6"),
             ("Dota 2", "MOBA", "#C0392B"),
             ("Apex Legends", "Battle Royale", "#DA3C23"),
-            ("FIFA ", "Sport", "#2ECC71"),
+            ("FIFA", "Sport", "#2ECC71"),
             ("Rocket League", "Sport", "#3498DB"),
             ("Among Us", "Social", "#7F8C8D"),
             ("Rust", "Survival", "#8B4513"),
@@ -37,6 +36,20 @@ namespace LOG
         {
             labelWelcome.Text = "🎮 Bun venit, " + username + "!";
             IncarcaJocuri();
+
+            // Conectare buton Profil
+            btnProfil.Click += (s, ev) =>
+            {
+                FormProfil profil = new FormProfil(username);
+                profil.ShowDialog();
+            };
+
+            //buton cautare utilizatori
+            btnChat.Click += (s, ev) =>
+            {
+                FormCautare cautare = new FormCautare(username);
+                cautare.ShowDialog();
+            };
         }
 
         private void IncarcaJocuri()
@@ -60,13 +73,11 @@ namespace LOG
                 card.Cursor = Cursors.Hand;
                 card.Tag = joc.Nume;
 
-                // Umbra/border
                 card.Paint += (s, pe) =>
                 {
                     pe.Graphics.DrawRectangle(new Pen(Color.White, 1), 0, 0, card.Width - 1, card.Height - 1);
                 };
 
-                // Nume joc
                 Label lblNume = new Label();
                 lblNume.Text = joc.Nume;
                 lblNume.Font = new Font("Segoe UI", 13, FontStyle.Bold);
@@ -75,7 +86,6 @@ namespace LOG
                 lblNume.Size = new Size(180, 30);
                 lblNume.Tag = joc.Nume;
 
-                // Gen
                 Label lblGen = new Label();
                 lblGen.Text = joc.Gen;
                 lblGen.Font = new Font("Segoe UI", 9);
@@ -84,7 +94,6 @@ namespace LOG
                 lblGen.Size = new Size(180, 20);
                 lblGen.Tag = joc.Nume;
 
-                // Buton detalii
                 Button btnDetalii = new Button();
                 btnDetalii.Text = "Vezi detalii →";
                 btnDetalii.FlatStyle = FlatStyle.Flat;

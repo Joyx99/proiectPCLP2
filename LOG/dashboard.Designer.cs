@@ -20,6 +20,7 @@
             this.btnChat = new System.Windows.Forms.Button();
             this.btnProfil = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnCautare = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
             // Form
@@ -36,12 +37,27 @@
             this.panelTop.Controls.Add(this.labelWelcome);
             this.panelTop.Controls.Add(this.btnLogout);
             this.panelTop.Controls.Add(this.btnProfil);
+            this.panelTop.Controls.Add(this.btnCautare);
 
             // labelWelcome
             this.labelWelcome.ForeColor = System.Drawing.Color.FromArgb(0, 230, 180);
             this.labelWelcome.Font = new System.Drawing.Font("Segoe UI", 16, System.Drawing.FontStyle.Bold);
             this.labelWelcome.Location = new System.Drawing.Point(20, 15);
             this.labelWelcome.Size = new System.Drawing.Size(500, 40);
+
+            // btnCautare
+            this.btnCautare.Text = "🔍 Caută";
+            this.btnCautare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCautare.BackColor = System.Drawing.Color.FromArgb(50, 50, 80);
+            this.btnCautare.ForeColor = System.Drawing.Color.White;
+            this.btnCautare.Font = new System.Drawing.Font("Segoe UI", 10);
+            this.btnCautare.Size = new System.Drawing.Size(100, 40);
+            this.btnCautare.Location = new System.Drawing.Point(680, 15);
+            this.btnCautare.Click += (s, e) =>
+            {
+                FormCautare cautare = new FormCautare(username);
+                cautare.ShowDialog();
+            };
 
             // btnProfil
             this.btnProfil.Text = "👤 Profil";
@@ -50,7 +66,12 @@
             this.btnProfil.ForeColor = System.Drawing.Color.White;
             this.btnProfil.Font = new System.Drawing.Font("Segoe UI", 10);
             this.btnProfil.Size = new System.Drawing.Size(100, 40);
-            this.btnProfil.Location = new System.Drawing.Point(800, 15);
+            this.btnProfil.Location = new System.Drawing.Point(790, 15);
+            this.btnProfil.Click += (s, e) =>
+            {
+                FormProfil profil = new FormProfil(username);
+                profil.ShowDialog();
+            };
 
             // btnLogout
             this.btnLogout.Text = "🚪 Logout";
@@ -59,7 +80,7 @@
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10);
             this.btnLogout.Size = new System.Drawing.Size(100, 40);
-            this.btnLogout.Location = new System.Drawing.Point(920, 15);
+            this.btnLogout.Location = new System.Drawing.Point(900, 15);
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
 
             // panelJocuri
@@ -99,5 +120,6 @@
         private System.Windows.Forms.Button btnChat;
         private System.Windows.Forms.Button btnProfil;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnCautare;
     }
 }

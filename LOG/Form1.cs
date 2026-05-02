@@ -32,18 +32,29 @@ namespace LOG
 
         public void CreareBazaDate()
         {
-            if (System.IO.File.Exists("proiect.db"))
-   
-
-            SQLiteConnection.CreateFile("proiect.db");
-            using (var con = new SQLiteConnection("Data Source=proiect.db;Version=3;"))
+            if (!System.IO.File.Exists("proiect.db"))
             {
-                con.Open();
-                string sql = @"CREATE TABLE users (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT, 
-                    username TEXT, 
-                    password TEXT)";
-                new SQLiteCommand(sql, con).ExecuteNonQuery();
+                SQLiteConnection.CreateFile("proiect.db");
+                using (var con = new SQLiteConnection("Data Source=proiect.db;Version=3;"))
+                {
+                    con.Open();
+
+                    string sqlUsers = @"CREATE TABLE users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                username TEXT, 
+                password TEXT,
+                bio TEXT,
+                avatar TEXT)";
+                    new SQLiteCommand(sqlUsers, con).ExecuteNonQuery();
+
+                    string sqlMessages = @"CREATE TABLE messages (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                username TEXT,
+                joc TEXT,
+                mesaj TEXT,
+                timp TEXT)";
+                    new SQLiteCommand(sqlMessages, con).ExecuteNonQuery();
+                }
             }
         }
 

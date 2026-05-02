@@ -38,6 +38,22 @@ namespace LOG
             lblDesc.Location = new Point(30, 100);
             lblDesc.Size = new Size(540, 80);
 
+            // Buton Chat Lobby
+
+            Button btnChat = new Button();
+            btnChat.Text = "💬 Intră în Lobby Chat";
+            btnChat.FlatStyle = FlatStyle.Flat;
+            btnChat.BackColor = Color.FromArgb(0, 180, 140);
+            btnChat.ForeColor = Color.White;
+            btnChat.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            btnChat.Size = new Size(250, 45);
+            btnChat.Location = new Point(30, 200);
+            btnChat.Click += (s, e) =>
+            {
+                FormChat chat = new FormChat(username, numeJoc);
+                chat.ShowDialog();
+            };
+
             // Buton înapoi
             Button btnBack = new Button();
             btnBack.Text = "← Înapoi";
@@ -51,6 +67,7 @@ namespace LOG
 
             this.Controls.Add(lblTitlu);
             this.Controls.Add(lblDesc);
+            this.Controls.Add(btnChat);
             this.Controls.Add(btnBack);
         }
     }
